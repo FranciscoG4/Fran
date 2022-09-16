@@ -1,0 +1,27 @@
+program Punto16Guia4;
+var
+  N,i:byte;
+  DNI,Ganador:string[6];
+  Dist,MaxL,SumD:real;
+begin
+  MaxL:=-9999;
+  SumD:=0;
+  writeln('Ingrese la cantidad de concursantes');
+  readln(N);
+  For i:=1 to N do
+    Begin
+      writeln('Ingrese el numero de documento');
+      readln(DNI);
+      writeln('Ingrese la distancia a la que callo');
+      readln(Dist);
+      If (Dist>MaxL) then
+        Begin
+          MaxL:=Dist;
+          Ganador:=DNI;
+        end;
+      SumD:=SumD+Dist;
+    end;
+  writeln('el ganador es: ',Ganador,' Con una distancia de: ',MaxL:8:2);
+  writeln('la distancia media de la prueba es: ',SumD/N:8:2);
+  readln;
+end.          
